@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices - Living Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1 id="heading">Living Room - Device Control</h1>
+    </div>
+
+    <div class="appliances" id="light1">
+        <div class="image-container">
+            <img id="light1off" class="visual" src="img/LIGHT_OFF.png" alt="">
+        </div>
+        <h2 id="normal1" class="normal">Light 1</h2>
+        <label>
+            <!--This checkbox input below is the ON and OFF switch of light 1-->
+            <input type="checkbox" id="on/off1" class="on-off" onclick="lightswitch1()">
+            <span class="check"></span>
+        </label>
+        <input type="checkbox" id="auto/manual">
+    </div>
+
+    <div class="appliances" id="light2">
+        <div class="image-container">
+            <img id="light2off" class="visual" src="img/LIGHT_OFF.png" alt="">
+        </div>
+        <h2 id="normal2" class="normal">Light 2</h2>
+        <label>
+            <!--This checkbox input below is the ON and OFF switch of light 2-->
+            <input type="checkbox" id="on/off2" class="on-off" onclick="lightswitch2()">
+            <span class="check"></span>
+        </label>
+        <input type="checkbox" id="auto/manual">
+    </div>
+
+    <div class="appliances" id="fan">
+        <div class="image-container">
+            <img id="fanoff" class="visual" src="img/FAN_OFF.png" alt="">
+        </div>
+        <h2 id="normal3" class="normal">Fan</h2>
+        <label>
+            <!--This checkbox input below is the ON and OFF switch of fan-->
+            <input type="checkbox" id="on/off3" class="on-off" onclick="fanswitch()">
+            <span class="check"></span>
+        </label>
+        <input type="checkbox" id="auto/manual">
+        <input type="range" id="regulator">
+    </div>
+
+    <div class="appliances" id="socket">
+        <div class="image-container">
+            <img id="socketoff" class="visual" src="img/SOCKET_PLUG_OUT.png" alt="">
+        </div>
+        <h2 id="normal4" class="normal">Socket</h2>
+        <label>
+            <!--This checkbox input below is the ON and OFF switch of socket-->
+            <input type="checkbox" id="on/off4" class="on-off" onclick="socketswitch()">
+            <span class="check"></span>
+        </label>
+        <input type="checkbox" id="auto/manual">
+    </div>
+
+
+
+    <script>
+        function lightswitch1() {
+            var checkbox = document.getElementById("on/off1");
+            var image = document.getElementById("light1off");
+            var back = document.getElementById("light1");
+            var text = document.getElementById("normal1");
+
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    image.src = "img/LIGHT_ON_WHITE.png";
+                    back.classList.add("checked");
+                    text.classList.add("checked");
+                }
+                else {
+                    image.src = "img/LIGHT_OFF.png";
+                    back.classList.remove("checked");
+                    text.classList.remove("checked");
+                }
+            });
+        }
+
+
+        function lightswitch2() {
+            var checkbox = document.getElementById("on/off2");
+            var image = document.getElementById("light2off");
+            var back = document.getElementById("light2");
+            var text = document.getElementById("normal2");
+
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    image.src = "img/LIGHT_ON_YELLOW.png";
+                    back.classList.add("checked");
+                    text.classList.add("checked");
+                }
+                else {
+                    image.src = "img/LIGHT_OFF.png";
+                    back.classList.remove("checked");
+                    text.classList.remove("checked");
+                }
+            });
+        }
+
+
+        function fanswitch() {
+            var checkbox = document.getElementById("on/off3");
+            var image = document.getElementById("fanoff");
+            var back = document.getElementById("fan");
+            var text = document.getElementById("normal3");
+
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    image.src = "img/FAN_ON.gif";
+                    back.classList.add("checked");
+                    text.classList.add("checked");
+                }
+                else {
+                    image.src = "img/FAN_OFF.png";
+                    back.classList.remove("checked");
+                    text.classList.remove("checked");
+                }
+            });
+        }
+
+
+        function socketswitch() {
+            var checkbox = document.getElementById("on/off4");
+            var image = document.getElementById("socketoff");
+            var back = document.getElementById("socket");
+            var text = document.getElementById("normal4");
+
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    image.src = "img/SOCKET_PLUG_IN.png";
+                    back.classList.add("checked");
+                    text.classList.add("checked");
+                }
+                else {
+                    image.src = "img/SOCKET_PLUG_OUT.png";
+                    back.classList.remove("checked");
+                    text.classList.remove("checked");
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
